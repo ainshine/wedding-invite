@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нурулла & Алтынкүл - Свадьба</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap');
+        
+        :root {
+            --gold: #D4AF37;
+            --light-gold: #F5E6AB;
+            --dark-gold: #996515;
+            --white: #FFFDFA;
+            --black: #222222;
+            --ivory: #FFFFF0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--ivory);
+            color: var(--black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper.png');
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .floral-decoration {
+            position: absolute;
+            width: 150px;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .floral-top-left {
+            top: 0;
+            left: 0;
+            transform: rotate(180deg);
+        }
+        
+        .floral-top-right {
+            top: 0;
+            right: 0;
+        }
+        
+        .floral-bottom-left {
+            bottom: 0;
+            left: 0;
+            transform: rotate(90deg);
+        }
+        
+        .floral-bottom-right {
+            bottom: 0;
+            right: 0;
+            transform: rotate(-90deg);
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            position: relative;
+        }
+        
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin: 0;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .couple-names:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .and-symbol {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--dark-gold);
+            margin: 0 15px;
+            vertical-align: middle;
+            position: relative;
+            top: -5px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            letter-spacing: 8px;
+            color: var(--dark-gold);
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 40px 0;
+            border: none;
+            position: relative;
+        }
+        
+        .divider:after {
+            content: "✻";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--ivory);
+            padding: 0 15px;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+        
+        .invitation-card {
+            background-color: var(--white);
+            border: 1px solid var(--light-gold);
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+        .invitation-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--light-gold), var(--gold));
+        }
+        
+        .invitation-text {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 2;
+            position: relative;
+        }
+        
+       
+        
+        .details-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 50px 0;
+        }
+        
+        .detail-box {
+            flex: 1;
+            min-width: 250px;
+            margin: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--light-gold);
+            border-radius: 5px;
+            transition: all 0.4s ease;
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .detail-box:before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--light-gold) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .detail-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.15);
+        }
+        
+        .detail-box:hover:before {
+            opacity: 0.1;
+        }
+        
+        .detail-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .detail-title:after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background: var(--gold);
+        }
+        
+        .detail-content {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .countdown {
+            text-align: center;
+            margin: 50px 0;
+            padding: 40px 30px;
+            background-color: rgba(212, 175, 55, 0.08);
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .countdown:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--light-gold), var(--gold));
+        }
+        
+        .countdown-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-gold);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .timer-unit {
+            background-color: var(--white);
+            border: 1px solid var(--gold);
+            padding: 20px 15px;
+            min-width: 90px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .timer-unit:hover {
+            transform: scale(1.05);
+        }
+        
+        .timer-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark-gold);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .timer-label {
+            font-size: 0.9rem;
+            color: var(--black);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+        
+        .map-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--dark-gold);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--gold);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .map-link:hover {
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+        
+        .hosts {
+            text-align: center;
+            margin: 40px 0;
+            font-style: italic;
+            color: var(--dark-gold);
+            font-size: 1.2rem;
+            position: relative;
+        }
+        
+        .hosts:before, .hosts:after {
+            content: "~";
+            margin: 0 15px;
+            color: var(--gold);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            color: var(--dark-gold);
+            font-size: 1rem;
+            border-top: 1px solid var(--light-gold);
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+        
+        /* Анимации */
+        .animate-delay-1 {
+            animation-delay: 0.3s;
+        }
+        
+        .animate-delay-2 {
+            animation-delay: 0.6s;
+        }
+        
+        .animate-delay-3 {
+            animation-delay: 0.9s;
+        }
+        
+        @media (max-width: 768px) {
+            .couple-names {
+                font-size: 2.8rem;
+            }
+            
+            .and-symbol {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+                letter-spacing: 5px;
+            }
+            
+            .detail-box {
+                min-width: 100%;
+                margin: 10px 0;
+            }
+            
+            .timer-unit {
+                min-width: 70px;
+                padding: 15px 10px;
+            }
+            
+            .timer-value {
+                font-size: 2rem;
+            }
+            
+            .floral-decoration {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <svg class="floral-decoration floral-top-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path fill="var(--gold)" d="M50 0 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50"/>
+        </svg>
+        
+        <svg class="floral-decoration floral-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path fill="var(--gold)" d="M50 0 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50"/>
+        </svg>
+        
+        <header>
+            <h1 class="couple-names animate__animated animate__fadeIn">Нурулла <span class="and-symbol animate__animated animate__fadeIn animate-delay-1">&</span> Алтынкүл</h1>
+            <p class="subtitle animate__animated animate__fadeIn animate-delay-2">23 ТАМЫЗ 2025</p>
+        </header>
+        
+        <hr class="divider">
+        
+        <div class="invitation-card animate__animated animate__fadeIn animate-delay-1">
+            <p class="invitation-text">
+                ҚҰРМЕТТІ АҒАЙЫН-ТУЫС, БАУЫРЛАР, ҚҰДА-ЖЕКЖАТ, НАҒАШЫ, ЖИЕН-БӨЛЕЛЕР, ДОС-ЖАРАНДАР, ӘРІПТЕСТЕР, КӨРШІЛЕР!<br><br>
+                Сіз(дер)ді ұлымыз Нурулла мен келініміз Алтынкүлдің шаңырақ көтеру тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.
+            </p>
+        </div>
+        
+        <div class="countdown animate__animated animate__fadeIn animate-delay-2">
+            <h2 class="countdown-title">Тойға дейін</h2>
+        <div class="countdown-timer">
+                <div class="timer-unit">
+                    <div class="timer-value" id="days">00</div>
+                    <div class="timer-label">Күн</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">Сағат</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">Минут</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">Секунд</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="details-section">
+            <div class="detail-box animate__animated animate__fadeInLeft animate-delay-1">
+                <h3 class="detail-title">Тойдың басталу уақыты</h3>
+                <p class="detail-content">
+                    23 ТАМЫЗ 2025<br>
+                    сағат 19:00
+                </p>
+            </div>
+            
+            <div class="detail-box animate__animated animate__fadeInRight animate-delay-1">
+                <h3 class="detail-title">Тойдың мекенжайы</h3>
+                <p class="detail-content">
+                    Тараз қаласы<br>
+                    Жамбыл проспекті, 182<br>
+                    "Хан сарай" мейрамханасы
+                </p>
+                <a href="https://2gis.kz/taraz/geo/70030076203652655/71.359869,42.897073" class="map-link" target="_blank">Карта арқылы ашу</a>
+            </div>
+        </div>
+        
+        <p class="hosts animate__animated animate__fadeIn animate-delay-3">Той иелері: Палуанбек & Эльмира</p>
+        
+        <svg class="floral-decoration floral-bottom-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path fill="var(--gold)" d="M50 0 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50"/>
+        </svg>
+        
+        <svg class="floral-decoration floral-bottom-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path fill="var(--gold)" d="M50 0 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50 Q40 40 50 50 Q60 60 100 50 Q60 40 50 50 Q40 60 0 50"/>
+        </svg>
+    </div>
+    
+    <footer class="animate__animated animate__fadeIn animate-delay-3">
+        Біздің ерекше күнімізге қатысқаныңызға рахмет!
+    </footer>
+    <audio id="bg-music" autoplay loop hidden> 
+        <source src="ТАПТЫМАУСЕНЫ.m4a" type="audio/mpeg">
+    </audio>
+    
+    <script>
+
+                window.addEventListener('load', function () {
+            const audio = document.getElementById("bg-music");
+            audio.volume = 0.15; // очень тихо, 15% громкости
+            audio.play().catch(() => {
+            // Браузеры могут заблокировать автозапуск, особенно в iOS
+            console.log("Музыка не запустилась автоматически");
+            });
+        });
+
+        // Countdown timer
+        function updateCountdown() {
+            const weddingDate = new Date('2025-08-23T19:00:00');
+            const now = new Date();
+            const diff = weddingDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // Анимация чисел
+            if (seconds === 59) {
+                animateTimerUnit('seconds');
+                if (minutes === 59) {
+                    animateTimerUnit('minutes');
+                    if (hours === 23) {
+                        animateTimerUnit('hours');
+                        animateTimerUnit('days');
+                    }
+                }
+            }
+        }
+        
+        function animateTimerUnit(unit) {
+            const element = document.getElementById(unit);
+            element.classList.add('animate__animated', 'animate__pulse');
+            setTimeout(() => {
+                element.classList.remove('animate__animated', 'animate__pulse');
+            }, 1000);
+        }
+        
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Анимация при скролле
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        const animation = entry.target.getAttribute('class').match(/animate__\w+/);
+                        if (animation) {
+                            entry.target.classList.add(animation[0]);
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(element => {
+                element.style.opacity = 0;
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
